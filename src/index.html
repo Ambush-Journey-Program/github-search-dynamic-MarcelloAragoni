@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github user search</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <div class="panel">
+      <div class="search">
+        <i class="Material-icons search--icon">search</i>
+        <input class="search--input" type="text" />
+        <button class="button button--search">Search</button>
+      </div>
+      <div class="card">
+        <img class="card__avatar" src="../images/medusa.jpeg" alt="" />
+        <div class="card__details">
+          <div class="card__user">
+            <div class="card__user__name">
+              <h1 class="card__user__name--user">The Octocat</h1>
+              <span class="card__user__name--ref">@octocat</span>
+            </div>
+            <p class="card__user__joined">Joined 25 jan 2011</p>
+          </div>
+          <p class="card__bio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+          <div class="card__info">
+            <div>
+              <span class="card__info--title">Repos</span>
+              <p class="card__info--details">8</p>
+            </div>
+            <div>
+              <span class="card__info--title">Followers</span>
+              <p class="card__info--details">3938</p>
+            </div>
+            <div>
+              <span class="card__info--title">Following</span>
+              <p class="card__info--details">9</p>
+            </div>
+          </div>
+          <div class="card__institutional">
+            <div class="card__local">
+              <p class="card__local__info">
+                <i class="Material-icons card__local--icon">room</i>
+                San Francisco
+              </p>
+              <p class="card__local__info">
+                <i class="Material-icons card__local--icon">link</i>
+                <a class="card__local__web--link" href="https://github.blog"
+                  >https://github.blog</a
+                >
+              </p>
+            </div>
+            <div class="card__local">
+              <p class="card__local__info">
+                <i class="Material-icons card__local--icon"
+                  >qr_code</i
+                >
+                Not Available
+              </p>
+              <p class="card__local__info">
+                <i class="Material-icons card__local--icon"
+                  >business</i
+                >
+                <a
+                  class="card__local__business--link"
+                  href="https://github.blog"
+                  >@github</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
