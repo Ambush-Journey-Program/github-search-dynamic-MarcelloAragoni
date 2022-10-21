@@ -46,3 +46,7 @@
 - [Frontend Mentor Basis](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6)
 - [JavaScript](https://www.notion.so/JavaScript-82853e990c65478a9792e9f733b539fe)
 - [Github REST API](https://docs.github.com/en/rest/overview/resources-in-the-rest-api)
+
+### How to Execute
+
+You need to install live server extention for VS-Code, and then click in go live at the bottom right of the window.
