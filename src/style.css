@@ -23,9 +23,8 @@ body {
   width: 45.625rem;
   height: 4.3125rem;
   margin: 1rem;
-  display: grid;
-  grid-template-columns: 6rem 31rem 6rem;
-  grid-column-gap: 1rem;
+  display: flex;
+  flex-direction: row;
   background-color: var(--darkblue);
   border-radius: 1rem;
 }
@@ -34,21 +33,35 @@ body {
   place-self: center;
   font-size: 40px !important;
   color: var(--lightblue);
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.search--form {
+  display: flex;
+  align-items: center;
+  flex: 9;
 }
 
 .search--input {
-  color: var(--white);
-  background-color: var(--darkblue);
+  height: 3.125rem;
+  color: var(--white)!important;
+  background-color: var(--darkblue)!important;
   border: none;
+  flex: 8;
+  margin-right: 4rem;
 }
 
 .button {
-  height: 2.5rem;
+  width: 6.625rem;
+  height: 3.125rem;
   align-self: center;
   background-color: var(--lightblue);
   border-radius: 0.5rem;
   border: none;
   color: var(--white);
+  flex: 2;
+  margin-right: 0.625rem;
 }
 
 .card {
@@ -86,6 +99,7 @@ body {
 
 .card__user__joined {
   color: var(--gray);
+  line-height: 2rem;
 }
 
 .card__user__name--user {
@@ -147,6 +161,10 @@ body {
 
 .card__local__twitter {
   margin-bottom: 1.3125rem;
+}
+
+.card__local--link {
+  color: var(--white);
 }
 
 .card__local--icon {

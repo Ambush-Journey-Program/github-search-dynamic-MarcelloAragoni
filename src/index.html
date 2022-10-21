@@ -14,68 +14,63 @@
     <div class="panel">
       <div class="search">
         <i class="Material-icons search--icon">search</i>
-        <input class="search--input" type="text" />
-        <button class="button button--search">Search</button>
+        <form id="searchForm" class="search--form">
+          <input name="username" class="search--input" type="text" />
+          <button class="button button--search">Search</button>
+        </form>
       </div>
       <div class="card">
-        <img class="card__avatar" src="../images/medusa.jpeg" alt="" />
+        <img id="useravatar" class="card__avatar" src="../images/medusa.jpeg" alt="" />
         <div class="card__details">
           <div class="card__user">
             <div class="card__user__name">
-              <h1 class="card__user__name--user">The Octocat</h1>
-              <span class="card__user__name--ref">@octocat</span>
+              <h1 id="username" class="card__user__name--user"></h1>
+              <span id="usertag" class="card__user__name--ref"></span>
             </div>
-            <p class="card__user__joined">Joined 25 jan 2011</p>
+            <p id="userjoined" class="card__user__joined"></p>
           </div>
-          <p class="card__bio">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+          <p id="userbio" class="card__bio"></p>
           <div class="card__info">
             <div>
               <span class="card__info--title">Repos</span>
-              <p class="card__info--details">8</p>
+              <p id="userrepositories" class="card__info--details"></p>
             </div>
             <div>
               <span class="card__info--title">Followers</span>
-              <p class="card__info--details">3938</p>
+              <p id="userfollowers" class="card__info--details"></p>
             </div>
             <div>
               <span class="card__info--title">Following</span>
-              <p class="card__info--details">9</p>
+              <p id="userfollowing" class="card__info--details"></p>
             </div>
           </div>
           <div class="card__institutional">
             <div class="card__local">
               <p class="card__local__info">
                 <i class="Material-icons card__local--icon">room</i>
-                San Francisco
+                <span id="usercity"></span>
               </p>
               <p class="card__local__info">
                 <i class="Material-icons card__local--icon">link</i>
-                <a class="card__local__web--link" href="https://github.blog"
-                  >https://github.blog</a
+                <a id="userlink" class="card__local__web--link" href=""></a
                 >
               </p>
             </div>
             <div class="card__local">
               <p class="card__local__info">
-                <i class="Material-icons card__local--icon"
-                  >qr_code</i
-                >
-                Not Available
+                <i class="Material-icons card__local--icon">qr_code</i>
+                <a id="usertwitter" class="card__local--link" href=""></a>
               </p>
               <p class="card__local__info">
-                <i class="Material-icons card__local--icon"
-                  >business</i
-                >
-                <a
-                  class="card__local__business--link"
-                  href="https://github.blog"
-                  >@github</a
-                >
+                <i class="Material-icons card__local--icon">business</i>
+                <a id="userbusiness" class="card__local__business--link" href=""></a>
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="main.js"></script>
+    <script src="http://www.datejs.com/build/date.js" type="text/javascript"></script>
   </body>
 </html>
