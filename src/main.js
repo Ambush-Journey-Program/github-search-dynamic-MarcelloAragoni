@@ -1,6 +1,6 @@
 import { handleError,handleTextContentChange,handleFormatDate,handleHrefChange,handleSrcChange } from './utilities.js';
-import { inputEl } from './consts.js';
 
+const inputEl = document.querySelector("#searchForm");
 
 async function handleFetch(username) {
   // return await fetch(`https://api.github.com/users/${username}`).catch(handleError);

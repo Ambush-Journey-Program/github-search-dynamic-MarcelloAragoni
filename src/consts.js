@@ -1,5 +1,3 @@
-export const inputEl = document.querySelector("#searchForm");
-
 export const months = [
   "Jan",
   "Feb",
