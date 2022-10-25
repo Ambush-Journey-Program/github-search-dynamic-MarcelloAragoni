@@ -1,4 +1,4 @@
-import { handleError,handleTextContentChange,handleFormatDate,handleHrefChange,handleSrcChange } from './utilities.js';
+import { handleError,handleTextContentChange,handleFormatDate,handleHrefChange,handleSrcChange,handleAddClass,handleRemoveClass } from './utilities.js';
 
 const inputEl = document.querySelector("#searchForm");
 
@@ -8,15 +8,19 @@ async function handleFetch(username) {
   const response = await fetch(`https://api.github.com/users/${username}`);
 
   if (!response.ok) {
-    handleError("User not found");
+    return;
   }
 
   return await response.json();
 }
 
 function handleResponse(data) {
+  handleRemoveClass("user", "notfound")
+  handleRemoveClass("card","card--empty");
   handleTextContentChange("#username", data.name);
   handleTextContentChange("#usertag", `@${data.login}`);
+  handleTextContentChange("#username--mobile", data.name);
+  handleTextContentChange("#usertag--mobile", `@${data.login}`);
   handleFormatDate(data.created_at)
   handleTextContentChange("#userbio", data.bio);
   handleTextContentChange("#userrepositories", data.public_repos);
@@ -29,13 +33,39 @@ function handleResponse(data) {
   handleHrefChange("#usertwitter", `https://twitter.com/${data.twitter_username}`);
   handleTextContentChange("#userbusiness", data.company);
   handleSrcChange("#useravatar", data.avatar_url);
+  handleSrcChange("#useravatar--mobile", data.avatar_url);
 }
 
 async function handleSubmit(event) {
   event.preventDefault();
   const response = await handleFetch(event.target[0].value);
+  if (!response) {
+    handleError("user","notfound");
+    handleAddClass("card", "card--empty");
+
+    return;
+  }
+
   handleResponse(response);
 }
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById("theme--name").innerHTML='Light';
+        document.getElementById("theme--icon").src = './img/light_mode_black_24dp.svg'
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById("theme--name").innerHTML='Dark';
+        document.getElementById("theme--icon").src = './img/dark_mode_black_24dp.svg'
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
 
 inputEl.addEventListener("submit", handleSubmit);
 

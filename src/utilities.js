@@ -12,8 +12,20 @@ export function handleHrefChange (id, value) {
     document.querySelector(id).href = value;
 }
 
-export function handleError(errorMessage) {
-    window.alert(errorMessage);
+export function handleAddClass (id, value) {
+    document.getElementById(id).classList.add(value);
+}
+
+export function handleRemoveClass (id, value) {
+    document.getElementById(id).classList.remove(value);
+}
+
+export function handleToggleClass (id, value) {
+    document.getElementById(id).classList.toggle(value)
+}
+
+export function handleError(id,value) {
+    document.getElementById(id).classList.add(value);
 }
 
 export function handleFormatDate(value) {
@@ -23,5 +35,6 @@ export function handleFormatDate(value) {
   const monthName = months[date.getMonth()];
   const formatted = `${day} ${monthName} ${year}`;
 
-  handleTextContentChange("#userjoined",`Joined ${formatted}`)
+  handleTextContentChange("#userjoined",`Joined ${formatted}`);
+  handleTextContentChange("#userjoined--mobile",`Joined ${formatted}`);
 }

@@ -1,75 +1,90 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Github user search</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-  </head>
-  <body>
-    <div class="panel">
-      <div class="search">
-        <i class="Material-icons search--icon">search</i>
-        <form id="searchForm" class="search--form">
-          <input name="username" class="search--input" type="text" />
-          <button class="button button--search">Search</button>
-        </form>
-      </div>
-      <div class="card">
-        <img id="useravatar" class="card__avatar" src="" alt="" />
-        <div class="card__details">
-          <div class="card__user">
-            <div class="card__user__name">
-              <h1 id="username" class="card__user__name--user"></h1>
-              <span id="usertag" class="card__user__name--ref"></span>
-            </div>
-            <p id="userjoined" class="card__user__joined"></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Github user search</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+</head>
+
+<body>
+  <div class="panel">
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <span id="theme--name" class="dark--light--span">Dark</span>
+        <input type="checkbox" id="checkbox"><img id="theme--icon" src="./img/dark_mode_black_24dp.svg"
+          alt="dark_light_mode"></input>
+      </label>
+    </div>
+    <div class="search">
+      <i class="Material-icons search--icon">search</i>
+      <form id="searchForm" class="search--form">
+        <input name="username" class="search--input" type="text" />
+        <span id="user" class="search--found">User Not Found</span>
+        <button class="button button--search">Search</button>
+      </form>
+    </div>
+    <div id="card" class="card card--empty">
+      <img id="useravatar" class="card__avatar" src="" alt="avatar" />
+      <div class="card__details">
+        <div class="card__user--mobile">
+          <img id="useravatar--mobile" class="card__avatar--mobile" src="" alt="" />
+          <div class="card__user__name">
+            <h1 id="username--mobile" class="card__user__name--user"></h1>
+            <span id="usertag--mobile" class="card__user__name--ref"></span>
+            <p id="userjoined--mobile" class="card__user__joined"></p>
           </div>
-          <p id="userbio" class="card__bio"></p>
-          <div class="card__info">
-            <div>
-              <span class="card__info--title">Repos</span>
-              <p id="userrepositories" class="card__info--details"></p>
-            </div>
-            <div>
-              <span class="card__info--title">Followers</span>
-              <p id="userfollowers" class="card__info--details"></p>
-            </div>
-            <div>
-              <span class="card__info--title">Following</span>
-              <p id="userfollowing" class="card__info--details"></p>
-            </div>
+        </div>
+        <div class="card__user">
+          <div class="card__user__name">
+            <h1 id="username" class="card__user__name--user"></h1>
+            <span id="usertag" class="card__user__name--ref"></span>
           </div>
-          <div class="card__institutional">
-            <div class="card__local">
-              <p class="card__local__info">
-                <i class="Material-icons card__local--icon">room</i>
-                <span id="usercity"></span>
-              </p>
-              <p class="card__local__info">
-                <i class="Material-icons card__local--icon">link</i>
-                <a id="userlink" class="card__local__web--link" href=""></a
-                >
-              </p>
-            </div>
-            <div class="card__local">
-              <p class="card__local__info">
-                <i class="Material-icons card__local--icon">qr_code</i>
-                <a id="usertwitter" class="card__local--link" href=""></a>
-              </p>
-              <p class="card__local__info">
-                <i class="Material-icons card__local--icon">business</i>
-                <a id="userbusiness" class="card__local__business--link" href=""></a>
-              </p>
-            </div>
+          <p id="userjoined" class="card__user__joined"></p>
+        </div>
+        <p id="userbio" class="card__bio"></p>
+        <div class="card__info">
+          <div>
+            <span class="card__info--title">Repos</span>
+            <p id="userrepositories" class="card__info--details"></p>
+          </div>
+          <div>
+            <span class="card__info--title">Followers</span>
+            <p id="userfollowers" class="card__info--details"></p>
+          </div>
+          <div>
+            <span class="card__info--title">Following</span>
+            <p id="userfollowing" class="card__info--details"></p>
+          </div>
+        </div>
+        <div class="card__institutional">
+          <div class="card__local">
+            <p class="card__local__info">
+              <i class="Material-icons card__local--icon">room</i>
+              <span id="usercity"></span>
+            </p>
+            <p class="card__local__info">
+              <i class="Material-icons card__local--icon">link</i>
+              <a id="userlink" class="card__local__web--link" href=""></a>
+            </p>
+          </div>
+          <div class="card__local">
+            <p class="card__local__info">
+              <i class="Material-icons card__local--icon">qr_code</i>
+              <a id="usertwitter" class="card__local--link" href=""></a>
+            </p>
+            <p class="card__local__info">
+              <i class="Material-icons card__local--icon">business</i>
+              <a id="userbusiness" class="card__local__business--link" href=""></a>
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <script type="module" src="main.js"></script>
-  </body>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+
 </html>
