@@ -20,10 +20,6 @@ export function handleRemoveClass (id, value) {
     document.getElementById(id).classList.remove(value);
 }
 
-export function handleToggleClass (id, value) {
-    document.getElementById(id).classList.toggle(value)
-}
-
 export function handleError(id,value) {
     document.getElementById(id).classList.add(value);
 }
